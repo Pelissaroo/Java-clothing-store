@@ -1,14 +1,14 @@
 package Domain;
 
 
-public class ProductVariations {
+public class ProductVariation {
 
     private String color;
     private char size;
     private double price;
     private int stockQuantity;
 
-    public ProductVariations (String color, char size, double price, int stockQuantity){
+    public ProductVariation(String color, char size, double price, int stockQuantity){
         this.color = color;
         this.size = size;
         this.price = price;

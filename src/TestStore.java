@@ -1,29 +1,56 @@
 import Domain.Category;
 import Domain.Product;
-import Domain.ProductVariations;
+import Domain.ProductVariation;
+import Domain.Store;
 
 public class TestStore {
     public static void main(String[] args) {
 
-        Product product1 = new Product("Oversized shirt", Category.SHIRT);
-        Product product2 = new Product("Cargo pants", Category.PANTS);
-        Product product3 = new Product("Hoodie", Category.HOODIE);
-        Product product4 = new Product("Shorts", Category.SHORTS);
+        Store store = new Store();
 
-        ProductVariations variationShirt1 = new ProductVariations("White", 'M', 79.90, 2);
-        ProductVariations variationShirt2 = new ProductVariations("Black", 'P', 79.90, 2);
-        ProductVariations variationShirt3 = new ProductVariations("Gray", 'G', 79.90, 2);
+        Product shirt = new Product("Oversized shirt", Category.SHIRT);
+        Product cargoPants = new Product("Cargo pants", Category.PANTS);
+        Product hoodie = new Product("Hoodie", Category.HOODIE);
+        Product shorts = new Product("Shorts", Category.SHORTS);
 
-        product1.addVariation(variationShirt1);
-        product1.addVariation(variationShirt2);
-        product1.addVariation(variationShirt3);
+        ProductVariation shirtM = new ProductVariation("White", 'M', 79.90, 5);
+        ProductVariation shirtP = new ProductVariation("Black", 'P', 79.90, 2);
+        ProductVariation shirtG = new ProductVariation("Gray", 'G', 79.90, 4);
 
-        ProductVariations variationPants1 = new ProductVariations("Black", 'P', 159.49, 2);
-        ProductVariations variationPants2 = new ProductVariations("White", 'M', 159.49, 2);
-        ProductVariations variationPants3 = new ProductVariations("Brown", 'G', 159.49, 2);
+        shirt.addVariation(shirtM);
+        shirt.addVariation(shirtP);
+        shirt.addVariation(shirtG);
 
-        product2.addVariation(variationPants1);
-        product2.addVariation(variationPants2);
-        product2.addVariation(variationPants3);
+        ProductVariation pantsP = new ProductVariation("Black", 'P', 159.49, 2);
+        ProductVariation pantsM = new ProductVariation("White", 'M', 159.49, 4);
+        ProductVariation pantsG = new ProductVariation("Brown", 'G', 159.49, 1);
+
+       cargoPants.addVariation(pantsP);
+       cargoPants.addVariation(pantsM);
+       cargoPants.addVariation(pantsG);
+
+       ProductVariation hoodieP = new ProductVariation("Red", 'P', 179.99, 3);
+       ProductVariation hoodieM = new ProductVariation("Blue", 'M', 179.99, 4);
+       ProductVariation hoodieG = new ProductVariation("Black", 'G', 198.99, 7);
+
+       hoodie.addVariation(hoodieP);
+       hoodie.addVariation(hoodieM);
+       hoodie.addVariation(hoodieG);
+
+       ProductVariation shortsP = new ProductVariation("Black", 'P', 69.90, 6);
+       ProductVariation shortsM = new ProductVariation("Blue", 'M', 69.90, 4);
+       ProductVariation shortsG = new ProductVariation("Green", 'G', 69.90, 3);
+
+       shorts.addVariation(shortsP);
+       shorts.addVariation(shortsM);
+       shorts.addVariation(shortsG);
+
+       store.addProduct(shirt);
+        store.addProduct(cargoPants);
+        store.addProduct(hoodie);
+        store.addProduct(shorts);
+
+       store.listAllProducts();
+
     }
 }
