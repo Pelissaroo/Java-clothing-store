@@ -1,12 +1,17 @@
+import Application.StoreApp;
 import Domain.Category;
 import Domain.Product;
 import Domain.ProductVariation;
 import Domain.Store;
 
+import java.util.Scanner;
+
 public class TestStore {
     public static void main(String[] args) {
 
         Store store = new Store();
+        Scanner read = new Scanner(System.in);
+        StoreApp app = new StoreApp(store);
 
         Product shirt = new Product("Oversized shirt", Category.SHIRT);
         Product cargoPants = new Product("Cargo pants", Category.PANTS);
@@ -45,12 +50,14 @@ public class TestStore {
        shorts.addVariation(shortsM);
        shorts.addVariation(shortsG);
 
-       store.addProduct(shirt);
+        store.addProduct(shirt);
         store.addProduct(cargoPants);
         store.addProduct(hoodie);
         store.addProduct(shorts);
 
-       store.listAllProducts();
+
+        app.start();
+
 
     }
 }

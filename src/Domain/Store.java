@@ -1,5 +1,7 @@
 package Domain;
 
+import Application.StoreApp;
+
 import java.util.ArrayList;
 
 public class Store {
@@ -15,4 +17,12 @@ public class Store {
                 product.showInfo();
             }
         }
-    }
+
+    public void listByCategory (Category category) {
+        for (Product product : products) {
+            if (product.getCategory() == category){
+                product.showInfo();
+            }
+        }
+}
+}

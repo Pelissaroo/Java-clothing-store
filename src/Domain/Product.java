@@ -21,6 +21,10 @@ public class Product {
             return id;
         }
 
+        public Category getCategory(){
+            return category;
+        }
+
         public String getName(){
             return name;
         }
@@ -30,10 +34,9 @@ public class Product {
         }
 
         public void showInfo (){
-            System.out.println("Name : " + this.name);
-
             for (ProductVariation variation : productVariations) {
-                System.out.println("Color : " + variation.getColor());
+                System.out.println("Name : " + this.name);
+                System.out.println("Color : " + variation.getColor()) ;
                 System.out.println("Size : " + variation.getSize());
                 System.out.println("Price : " + variation.getPrice());
                 System.out.println("Avaliable : " + variation.getStockQuantity());
